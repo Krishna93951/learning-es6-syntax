@@ -88,3 +88,8 @@ class Indian extends Food{
 
 var meal = new Indian('Indian','Roti');
 meal.taste();
+
+//Destructuring Assignment
+let list = [1,2,3];
+let [a,b] = list;
+console.log(a,b);
