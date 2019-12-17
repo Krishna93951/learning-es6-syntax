@@ -3,58 +3,44 @@ import "./style.css";
 
 // Write Javascript code!
 
-//promise
-// let firstPromise = new Promise((resolve,reject) => {
-//   setTimeout(()=>{
-//     resolve('Success!');
-//   },1000);
-// })
+//Object merge
+let obj1 = {a:10,b:20};
+let obj2 = {c:30,d:40};
+let target = {};
+let merged = Object.assign(target,obj1,obj2);
+console.log(merged);
 
-// firstPromise.then((successMessage)=>{
-//   console.log(`Ya ${successMessage}`);
-// })
+//Object Clone
+let a = {name:'Zabuza'};
+let clone = Object.assign({},a);
+console.log(clone);
 
-//promise - resolve
-function resolve() {
-  console.log("Resolved");
-}
+//Array Element Finding
+let array1 = ['a','b','c','d','e'];
+let array2 = [1,2,3,4,1,2,3,4];
+let element = array1.find((x)=>x ==='e');
+console.log(element);
+let index = array2.findIndex((x)=> x === 4);
+console.log(index);
 
-Promise.resolve().then(resolve); //it returns a promise object first to which .then is calling the function resolve.
+//String repeating
+let repeat = 'King '.repeat(5);
+console.log(repeat);
 
-//promise - reject
-function rejected(error) {
-  console.error(error);
-}
-Promise.reject(new Error("Something Went Wrong")).catch(rejected);
+//String searching - first parameter is string and second parameter is index from where to search.
+console.log('Hi everyone'.startsWith('H'));
+console.log('I am King'.endsWith('King'));
+console.log('Learning ES6'.includes(' '));
 
-//promise chaining
-let test = job1();
+//Number type checking
+console.log(Number.isNaN(42));
+console.log(Number.isNaN(NaN));
 
-test
-  .then(function(data1) {
-    console.log("data1", data1);
-    return job2();
-  })
-  .then(function(data2) {
-    console.log("data2", data2);
-    return "Third Promise";
-  })
-  .then(function(data3) {
-    console.log("data3", data3);
-  });
+//Number Truncation
+console.log(Math.trunc(42.0));
+console.log(Math.trunc(-102.90));
 
-function job1() {
-  return new Promise(function(resolve, reject) {
-    setTimeout(function() {
-      resolve('First Promise');
-    }, 500);
-  });
-}
-
-function job2() {
-  return new Promise(function(resolve, reject) {
-    setTimeout(function() {
-      resolve("Second Promise");
-    }, 1000);
-  });
-}
+//Number Sign Determination
+console.log(Math.sign(34));
+console.log(Math.sign(-29));
+console.log(Math.sign(NaN));
