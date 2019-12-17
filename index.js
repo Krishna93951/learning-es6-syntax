@@ -3,44 +3,40 @@ import "./style.css";
 
 // Write Javascript code!
 
-//Object merge
-let obj1 = {a:10,b:20};
-let obj2 = {c:30,d:40};
-let target = {};
-let merged = Object.assign(target,obj1,obj2);
-console.log(merged);
+//Set
+var  set1 = new Set();
+set1.add(1);
+set1.add(20);
+set1.add({a:10,b:20});
+let obj = {a:0,b:20};
+set1.add(obj);
+console.log(set1);
+console.log(set1.has(obj));
+console.log(set1.delete(20));
+console.log(set1.has(20));
+console.log(set1.size);
 
-//Object Clone
-let a = {name:'Zabuza'};
-let clone = Object.assign({},a);
-console.log(clone);
+//Remove duplicate elements from array - works in console
+// var  number = [1,1,2,1,1,1,1,1];
+// console.log([...new Set(number)]);
 
-//Array Element Finding
-let array1 = ['a','b','c','d','e'];
-let array2 = [1,2,3,4,1,2,3,4];
-let element = array1.find((x)=>x ==='e');
-console.log(element);
-let index = array2.findIndex((x)=> x === 4);
-console.log(index);
+//set related to string
+let string ='HELLO WORLD';
+let set2 = new Set(string);
+console.log(set2);
 
-//String repeating
-let repeat = 'King '.repeat(5);
-console.log(repeat);
+//Map
+let myMap = new Map();
+let keyString = 'Hi',
+keyObject = {a:10,b:20},
+keyFunction =  function(){
+  console.log('Hello world');
+};
 
-//String searching - first parameter is string and second parameter is index from where to search.
-console.log('Hi everyone'.startsWith('H'));
-console.log('I am King'.endsWith('King'));
-console.log('Learning ES6'.includes(' '));
+myMap.set(keyString,'Hi people');
+myMap.set(keyObject,'This is an object');
+myMap.set(keyFunction,'This is a function');
 
-//Number type checking
-console.log(Number.isNaN(42));
-console.log(Number.isNaN(NaN));
-
-//Number Truncation
-console.log(Math.trunc(42.0));
-console.log(Math.trunc(-102.90));
-
-//Number Sign Determination
-console.log(Math.sign(34));
-console.log(Math.sign(-29));
-console.log(Math.sign(NaN));
+console.log(myMap.get('Hi'));
+console.log(myMap.get(keyObject));
+console.log(myMap.get(keyFunction));
