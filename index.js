@@ -30,3 +30,18 @@ meal.taste();
 let list = [1,2,3];
 let [a,b] = list;
 console.log(a,b);
+
+// var object1 = {
+// method1(){
+// console.log('Hello World');
+// }
+// }
+
+// var object2 = {
+// method2(){
+// super.method1();
+// }
+// }
+
+// Object.setPrototypeOf(object2,object1);
+// object2.method2()
